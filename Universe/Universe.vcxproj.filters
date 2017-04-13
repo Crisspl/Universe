@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\FHL">
+      <UniqueIdentifier>{f70e6a39-5bd9-4aeb-b83d-f15773671269}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FHL">
+      <UniqueIdentifier>{9f22fb0c-8795-4b3a-941b-ab38dc425797}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FHL\Graphics">
+      <UniqueIdentifier>{ec3f9a5c-66ed-4038-94eb-139698f00f82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FHL\Graphics\Shaders">
+      <UniqueIdentifier>{ea471a0c-ac4f-43fc-8db4-f8d97b2cd847}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FHL\Utility">
+      <UniqueIdentifier>{fd81ccbd-8248-480d-b6e3-faad0cb7518c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FHL\Maths">
+      <UniqueIdentifier>{7c6ebc68-6412-4b8b-9d1f-6f1536065290}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FHL\Graphics">
+      <UniqueIdentifier>{50129f33-0ecb-444d-9ff6-1ff9319434de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FHL\Utility">
+      <UniqueIdentifier>{6f17d470-dffd-4dfb-b703-bd95c2a8bd9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FHL\Maths">
+      <UniqueIdentifier>{145b0b0e-a7e1-420a-973e-a63175664764}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Buffer.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Color.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ColoredRect.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Configurator.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Light.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Litable.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Mesh.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Model.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ModelData.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Renderable.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\RenderConf.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Renderer.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\RenderMatrices.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\RenderTexture.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ResMgr.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shader.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ShaderSrcs.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Sizeable.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Sprite.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Texture.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\TexturedSizeable.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Transformable.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Transformable3D.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\UsingShader.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Vao.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Vertex.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\VertexArray.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\View.h">
+      <Filter>Header Files\FHL\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Constants.h">
+      <Filter>Header Files\FHL\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Mat4.h">
+      <Filter>Header Files\FHL\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\mathsFuncs.h">
+      <Filter>Header Files\FHL\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Quaternion.h">
+      <Filter>Header Files\FHL\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\swizzle.h">
+      <Filter>Header Files\FHL\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Vec2.h">
+      <Filter>Header Files\FHL\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Vec3.h">
+      <Filter>Header Files\FHL\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Vec4.h">
+      <Filter>Header Files\FHL\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\vectors.h">
+      <Filter>Header Files\FHL\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Clock.h">
+      <Filter>Header Files\FHL\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Debug.h">
+      <Filter>Header Files\FHL\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Utility\OrientedRect.h">
+      <Filter>Header Files\FHL\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Rect.h">
+      <Filter>Header Files\FHL\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Organism.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Animal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Plant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Wolf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sheep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Turtle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Antelope.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CyberSheep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\array_fs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\array_vs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\model_fs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\model_vs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\modelLight_fs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\modelLight_vs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\rect_fs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\rect_vs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\rectLight_fs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\rectLight_vs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\sprite_fs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\sprite_vs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\spriteLight_fs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\spriteLight_vs.glsl">
+      <Filter>Header Files\FHL\Graphics\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Buffer.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Color.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ColoredRect.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Configurator.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Light.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Mesh.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Model.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ModelData.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\RenderConf.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Renderer.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\RenderTexture.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ResMgr.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shader.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Sizeable.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Sprite.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Texture.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\TexturedSizeable.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Transformable.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Transformable3D.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\UsingShader.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Vao.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\VertexArray.cpp">
+      <Filter>Source Files\FHL\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Mat4.cpp">
+      <Filter>Source Files\FHL\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Quaternion.cpp">
+      <Filter>Source Files\FHL\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Clock.cpp">
+      <Filter>Source Files\FHL\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Debug.cpp">
+      <Filter>Source Files\FHL\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Utility\OrientedRect.cpp">
+      <Filter>Source Files\FHL\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Rect.cpp">
+      <Filter>Source Files\FHL\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Organism.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Animal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Plant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Turtle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Antelope.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CyberSheep.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

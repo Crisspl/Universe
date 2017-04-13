@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{238CB3FC-82D8-4557-A915-CC69E78741BA}</ProjectGuid>
+    <RootNamespace>Universe</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>D:\Libs\FHL;D:\Libs\SDL2\include;D:\Libs\GLEW\glew-1.13.0\include;D:\Libs\SOIL\src;D:\Libs\Assimp\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Libs\Assimp\lib;D:\Libs\GLEW\glew-1.13.0\lib\Release\Win32;D:\Libs\SOIL\lib;D:\Libs\SDL2\libsx86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>D:\Libs\Assimp\lib;D:\Libs\GLEW\glew-1.13.0\lib\Release\Win32;D:\Libs\SOIL\lib;D:\Libs\SDL2\libsx86;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Libs\FHL;D:\Libs\SDL2\include;D:\Libs\GLEW\glew-1.13.0\include;D:\Libs\SOIL\src;D:\Libs\Assimp\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>assimp.lib;SOIL.lib;gdi32.lib;opengl32.lib;glew32.lib;SDL2-vs.lib;SDL2main-vs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>assimp.lib;SOIL.lib;gdi32.lib;opengl32.lib;glew32.lib;SDL2-vs.lib;SDL2main-vs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Buffer.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Color.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ColoredRect.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Configurator.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Light.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Litable.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Mesh.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Model.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ModelData.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Renderable.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\RenderConf.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Renderer.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\RenderMatrices.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\RenderTexture.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ResMgr.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shader.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ShaderSrcs.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Sizeable.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Sprite.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Texture.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\TexturedSizeable.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Transformable.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Transformable3D.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\UsingShader.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Vao.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Vertex.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\VertexArray.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\View.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Constants.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Mat4.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\mathsFuncs.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Quaternion.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\swizzle.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Vec2.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Vec3.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Vec4.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Maths\vectors.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Clock.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Debug.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Utility\OrientedRect.h" />
+    <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Rect.h" />
+    <ClInclude Include="Animal.h" />
+    <ClInclude Include="Antelope.h" />
+    <ClInclude Include="CyberSheep.h" />
+    <ClInclude Include="Fox.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Organism.h" />
+    <ClInclude Include="Plant.h" />
+    <ClInclude Include="Sheep.h" />
+    <ClInclude Include="Turtle.h" />
+    <ClInclude Include="Wolf.h" />
+    <ClInclude Include="World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\array_fs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\array_vs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\modelLight_fs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\modelLight_vs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\model_fs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\model_vs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\rectLight_fs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\rectLight_vs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\rect_fs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\rect_vs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\spriteLight_fs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\spriteLight_vs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\sprite_fs.glsl" />
+    <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\sprite_vs.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Buffer.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Color.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ColoredRect.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Configurator.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Light.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Mesh.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Model.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ModelData.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\RenderConf.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Renderer.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\RenderTexture.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\ResMgr.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shader.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Sizeable.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Sprite.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Texture.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\TexturedSizeable.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Transformable.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Transformable3D.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\UsingShader.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Vao.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\VertexArray.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Mat4.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Maths\Quaternion.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Clock.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Debug.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Utility\OrientedRect.cpp" />
+    <ClCompile Include="..\..\..\..\..\Libs\FHL\FHL\Utility\Rect.cpp" />
+    <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="Antelope.cpp" />
+    <ClCompile Include="CyberSheep.cpp" />
+    <ClCompile Include="Fox.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Organism.cpp" />
+    <ClCompile Include="Plant.cpp" />
+    <ClCompile Include="Turtle.cpp" />
+    <ClCompile Include="World.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
