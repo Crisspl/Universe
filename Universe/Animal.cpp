@@ -25,11 +25,6 @@ void Animal::update(float _dt)
 	move(getVelocity() * _dt * direction);
 }
 
-void Animal::contact(Organism & _other)
-{
-	Organism::contact(_other);
-}
-
 std::vector<std::unique_ptr<Organism>>::iterator Animal::findTarget()
 {
 	using OrganismPtr = std::unique_ptr<Organism>;

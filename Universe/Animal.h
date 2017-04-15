@@ -11,7 +11,6 @@ public:
 	virtual ~Animal() = default;
 
 	virtual void update(float _dt) override;
-	void contact(Organism & _other) override;
 
 protected:
 	virtual std::vector<std::unique_ptr<Organism>>::iterator findTarget();

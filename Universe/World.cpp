@@ -31,6 +31,7 @@ void World::update(float _dt)
 					o->setAbleToMultiply(false);
 					other->setAbleToMultiply(false);
 					newOnes.rbegin()->get()->setPosition(o->getPosition() + fhl::Vec2f(Utilities::randomNonZeroVec2i(-100, 100)).normalized() * 100.f);
+					// TODO refactor
 				}
 				else
 					o->contact(*other);
