@@ -9,8 +9,8 @@ class CyberSheep :
 	public Animal
 {
 public:
-	CyberSheep(World & _world) :
-		Animal(_world, Organism::Species::CyberSheep, fhl::ResMgr::loadTexture("cyberSheepTex", "res/cyberSheep.png"), 11u, 4u) {}
+	CyberSheep(World & _world, std::size_t _gener) :
+		Animal(_world, Organism::Species::CyberSheep, fhl::ResMgr::loadTexture("cyberSheepTex", "res/cyberSheep.png"), 11u, 4u, _gener) {}
 
 	std::vector<std::unique_ptr<Organism>>::iterator findTarget() override;
 };

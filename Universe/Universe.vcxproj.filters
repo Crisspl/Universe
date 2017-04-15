@@ -201,6 +201,9 @@
     <ClInclude Include="CyberSheep.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\array_fs.glsl">
@@ -359,6 +362,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CyberSheep.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

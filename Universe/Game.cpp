@@ -9,17 +9,18 @@
 #include "Antelope.h"
 #include "Turtle.h"
 #include "Fox.h"
+#include "Wolf.h"
+#include "Sheep.h"
 
 SDL_Window* Game::m_window;
 SDL_GLContext Game::m_context;
 
 Game::Game() :
+	m_world({WIN_X, WIN_Y}),
 	m_running(true)
 {
-	m_world.addOrganism(std::make_unique<Antelope>(m_world));
-	m_world.addOrganism(std::make_unique<Turtle>(m_world));
-	m_world.addOrganism(std::make_unique<Fox>(m_world));
-	m_world.addOrganism(std::make_unique<Turtle>(m_world));
+	for(int i = 0; i < 12; i++)
+		m_world.addRandomOrganism();
 }
 
 Game & Game::get()

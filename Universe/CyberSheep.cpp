@@ -22,9 +22,10 @@ std::vector<std::unique_ptr<Organism>>::iterator CyberSheep::findTarget()
 
 	return *std::min_element(borches.begin(), borches.end(),
 		[this](const Iter & _a, const Iter & _b)
-	{
-		auto distanceA = (this->getPosition() - _a->get()->getPosition()).length();
-		auto distanceB = (this->getPosition() - _b->get()->getPosition()).length();
-		return distanceA < distanceB;
-	});
+		{
+			auto distanceA = (this->getPosition() - _a->get()->getPosition()).length();
+			auto distanceB = (this->getPosition() - _b->get()->getPosition()).length();
+			return distanceA < distanceB;
+		}
+	);
 }

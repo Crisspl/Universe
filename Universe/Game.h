@@ -39,7 +39,7 @@ private:
    bool m_running;
 
 public:
-   constexpr static GLuint WIN_X = 800, WIN_Y = 600;
+   constexpr static std::size_t WIN_X = 800, WIN_Y = 600;
 };
 
 #endif

@@ -9,8 +9,8 @@ class Sheep :
 	public Animal
 {
 public:
-	Sheep(World & _world) :
-		Animal(_world, Organism::Species::Sheep, fhl::ResMgr::loadTexture("sheepTex", "res/sheep.png"), 4u, 4u) {}
+	Sheep(World & _world, std::size_t _gener) :
+		Animal(_world, Organism::Species::Sheep, fhl::ResMgr::loadTexture("sheepTex", "res/sheep.png"), 4u, 4u, _gener) {}
 };
 
 #endif

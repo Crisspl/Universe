@@ -17,14 +17,16 @@ protected:
 		Antelope,
 		CyberSheep,
 		Grass,
-		Milkweed,
+		SowThistle,
 		Guarna,
 		WolfBerries,
-		SosnowskiBorsch
+		SosnowskiBorsch,
+
+		Count
 	};
 
 public:
-	Organism(World & _world, Species _species, fhl::Texture & _tex, unsigned _str, unsigned _initiative);
+	Organism(World & _world, Species _species, fhl::Texture & _tex, unsigned _str, unsigned _initiative, std::size_t _gener);
 	virtual ~Organism() = default;
 
 	void render(const fhl::RenderConf &) const override;
@@ -33,8 +35,18 @@ public:
 	unsigned getStrength() const { return m_strength; }
 	unsigned getInitiative() const { return m_initiative; }
 	std::size_t getId() const { return m_id; }
+	std::size_t getGeneration() const { return m_generation; }
+	bool isDead() const { return m_dead; }
 
 	virtual void update(float _dt) = 0;
+	virtual void multiply(Organism & _other) = 0;
+	bool isCollision(const Organism & _other) const;
+	virtual void contact(Organism & _other);
+	void setDead(bool _d) { m_dead = _d; }
+
+protected:
+	void attack(Organism & _other);
+	virtual void takeAttack(Organism & _other);
 
 protected:
 	World & m_world;
@@ -43,7 +55,8 @@ protected:
 private:
 	const Species m_species;
 	fhl::Sprite m_sprite;
-	const std::size_t m_id;
+	const std::size_t m_id, m_generation;
+	bool m_dead;
 
 	static std::size_t s_createdCount;
 };

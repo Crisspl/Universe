@@ -7,7 +7,7 @@ class Plant :
 	public Organism
 {
 public:
-	Plant(World & _world, Organism::Species _species, fhl::Texture & _tex, unsigned _str, unsigned _initiative);
+	Plant(World & _world, Organism::Species _species, fhl::Texture & _tex, unsigned _str, unsigned _initiative, std::size_t _gener);
 	virtual ~Plant() = default;
 
 	virtual void update(float _dt) override {}

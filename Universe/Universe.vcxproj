@@ -81,6 +81,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>/Qvec-report:1 /std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalDependencies>assimp.lib;SOIL.lib;gdi32.lib;opengl32.lib;glew32.lib;SDL2-vs.lib;SDL2main-vs.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -101,6 +102,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>/Qvec-report:1 /std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -176,6 +178,7 @@
     <ClInclude Include="Plant.h" />
     <ClInclude Include="Sheep.h" />
     <ClInclude Include="Turtle.h" />
+    <ClInclude Include="Utilities.h" />
     <ClInclude Include="Wolf.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
@@ -233,6 +236,7 @@
     <ClCompile Include="Organism.cpp" />
     <ClCompile Include="Plant.cpp" />
     <ClCompile Include="Turtle.cpp" />
+    <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
