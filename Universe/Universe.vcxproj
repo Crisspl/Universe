@@ -175,6 +175,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Organism.h" />
+    <ClInclude Include="OrganismFactory.h" />
     <ClInclude Include="Plant.h" />
     <ClInclude Include="Sheep.h" />
     <ClInclude Include="Turtle.h" />
@@ -234,6 +235,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Organism.cpp" />
+    <ClCompile Include="OrganismFactory.cpp" />
     <ClCompile Include="Plant.cpp" />
     <ClCompile Include="Turtle.cpp" />
     <ClCompile Include="Utilities.cpp" />

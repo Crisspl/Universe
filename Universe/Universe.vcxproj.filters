@@ -204,6 +204,9 @@
     <ClInclude Include="Utilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OrganismFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\array_fs.glsl">
@@ -365,6 +368,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OrganismFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

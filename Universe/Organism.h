@@ -7,20 +7,22 @@ class World;
 
 class Organism : public fhl::Transformable, public fhl::Renderable
 {
-protected:
-	enum class Species
+public:
+	enum class Species : unsigned
 	{
-		Wolf,
-		Sheep,
-		Fox,
-		Turtle,
+		// animals:
 		Antelope,
 		CyberSheep,
+		Fox,
+		Sheep,
+		Turtle,
+		Wolf,
+		// plants:
 		Grass,
-		SowThistle,
 		Guarna,
-		WolfBerries,
 		SosnowskiBorsch,
+		Sowthistle,
+		WolfBerries,
 
 		Count
 	};
