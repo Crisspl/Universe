@@ -18,15 +18,29 @@ void World::render(const fhl::RenderConf &) const
 void World::update(float _dt)
 {
 	removeDeadOrganisms();
+	Container newOnes;
 	for (Container::value_type & o : m_organisms)
 	{
 		for (Container::value_type & other : m_organisms)
 		{
 			if (o->getId() != other->getId() && o->isCollision(*other))
-				o->contact(*other);
+			{
+				if (o->getSpecies() == other->getSpecies() && o->isAbleToMultiply() && other->isAbleToMultiply())
+				{
+					newOnes.push_back(OrganismFactory::createOrganism(o->getSpecies(), *this, o->getGeneration() + 1));
+					o->setAbleToMultiply(false);
+					other->setAbleToMultiply(false);
+					newOnes.rbegin()->get()->setPosition(o->getPosition() + fhl::Vec2f(Utilities::randomNonZeroVec2i(-100, 100)).normalized() * 100.f);
+				}
+				else
+					o->contact(*other);
+			}
 		}
 		o->update(_dt);
 	}
+	for(Container::value_type & newOne : newOnes)
+		m_organisms.push_back(std::move(newOne));
+	std::cout << m_organisms.size() << '\n';
 }
 
 void World::addOrganism(Organism::Species _species, std::size_t _gener)
@@ -36,6 +50,18 @@ void World::addOrganism(Organism::Species _species, std::size_t _gener)
 		static_cast<float>(Utilities::random<int>(0, m_size.x)),
 		static_cast<float>(Utilities::random<int>(0, m_size.y))
 	});
+}
+
+void World::addOrganismInRadius(Organism::Species _species, std::size_t _gener, fhl::Vec2f _pos, float _radius)
+{
+	m_organisms.push_back(OrganismFactory::createOrganism(_species, *this, _gener));
+	fhl::Vec2f spawnPosition;
+	do
+	{
+		spawnPosition = fhl::Vec2f(static_cast<float>(Utilities::random<int>(-100, 100)), static_cast<float>(Utilities::random<int>(-100, 100)));
+	} while (spawnPosition != fhl::Vec2f::zero());
+	spawnPosition = spawnPosition.normalized();
+	m_organisms.rbegin()->get()->setPosition(_pos + spawnPosition * _radius);
 }
 
 void World::addRandomOrganism(std::size_t _gener)

@@ -12,6 +12,7 @@ Organism::Organism(World & _world, Species _species, fhl::Texture & _tex, unsign
 	m_sprite(_tex),
 	m_id(s_createdCount++),
 	m_generation(_gener),
+	m_multiplyTime(0.f),
 	m_dead(false)
 {
 }
@@ -33,10 +34,7 @@ bool Organism::isCollision(const Organism & _other) const
 void Organism::contact(Organism & _other)
 {
 	if (getSpecies() == _other.getSpecies())
-	{
-		//rozmnazanie animals only TODO
 		return;
-	}
 	if (m_initiative > _other.m_initiative)
 		attack(_other);
 	else if (m_initiative < _other.m_initiative)

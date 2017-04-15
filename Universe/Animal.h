@@ -11,15 +11,11 @@ public:
 	virtual ~Animal() = default;
 
 	virtual void update(float _dt) override;
-	void multiply(Organism & _other) override;
 	void contact(Organism & _other) override;
 
 protected:
 	virtual std::vector<std::unique_ptr<Organism>>::iterator findTarget();
 	virtual float getVelocity() const { return s_defaultVelocity; }
-
-private:
-	float m_time; //here
 
 protected:
 	constexpr static const float s_defaultVelocity = 20.f;

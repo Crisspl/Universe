@@ -19,8 +19,11 @@ Game::Game() :
 	m_world({WIN_X, WIN_Y}),
 	m_running(true)
 {
-	for(int i = 0; i < 12; i++)
-		m_world.addRandomOrganism();
+	for(int i = 0; i < 20; i++)
+		m_world.addRandomOrganism(0);
+	//m_world.addOrganism(Organism::Species::Sheep, 0);
+	//m_world.addOrganism(Organism::Species::Sheep, 0);
+	//m_world.addOrganism(Organism::Species::Sheep, 0);
 }
 
 Game & Game::get()

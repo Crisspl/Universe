@@ -39,15 +39,17 @@ public:
 	std::size_t getId() const { return m_id; }
 	std::size_t getGeneration() const { return m_generation; }
 	bool isDead() const { return m_dead; }
+	bool isAbleToMultiply() const { return m_multiplyTime >= s_multiplyInterval; }
 
 	virtual void update(float _dt) = 0;
-	virtual void multiply(Organism & _other) = 0;
 	bool isCollision(const Organism & _other) const;
 	virtual void contact(Organism & _other);
 	void setDead(bool _d) { m_dead = _d; }
+	void setAbleToMultiply(bool _a) { m_multiplyTime = _a ? m_multiplyTime : 0.f; }
 
 protected:
 	void attack(Organism & _other);
+	void addMultiplyTime(float _t) { m_multiplyTime += _t; }
 	virtual void takeAttack(Organism & _other);
 
 protected:
@@ -58,9 +60,11 @@ private:
 	const Species m_species;
 	fhl::Sprite m_sprite;
 	const std::size_t m_id, m_generation;
+	float m_multiplyTime;
 	bool m_dead;
 
 	static std::size_t s_createdCount;
+	constexpr static const float s_multiplyInterval = 5.f;
 };
 
 #endif

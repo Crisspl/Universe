@@ -7,14 +7,14 @@
 #include "Sheep.h"
 
 Animal::Animal(World & _world, Organism::Species _species, fhl::Texture & _tex, unsigned _str, unsigned _initiative, std::size_t _gener) :
-	Organism(_world, _species, _tex, _str, _initiative, _gener),
-	m_time(0.f)
+	Organism(_world, _species, _tex, _str, _initiative, _gener)
 {
 }
 
 void Animal::update(float _dt)
 {
-	m_time += _dt; //here
+	addMultiplyTime(_dt);
+
 	auto targetIter = findTarget();
 	if (targetIter == Organism::m_world.getOrganisms().end())
 		return;
@@ -25,28 +25,8 @@ void Animal::update(float _dt)
 	move(getVelocity() * _dt * direction);
 }
 
-void Animal::multiply(Organism & _other)
-{
-	if (m_time < 5.f)
-		return; //here
-	fhl::Vec2f spawnPosition;
-	do
-	{
-		spawnPosition = 100.f * fhl::Vec2f(static_cast<float>(Utilities::random<int>(-100, 100)), static_cast<float>(Utilities::random<int>(-100, 100)));
-	} while (spawnPosition != fhl::Vec2f::zero());
-	spawnPosition = spawnPosition.normalized();
-
-	Organism::m_world.addRandomOrganism(std::max(getGeneration(), _other.getGeneration()) + 1);
-	m_time = 0.f; //here
-}
-
 void Animal::contact(Organism & _other)
 {
-	if (getSpecies() == _other.getSpecies())
-	{
-		multiply(_other);
-		return;
-	}
 	Organism::contact(_other);
 }
 
@@ -61,9 +41,29 @@ std::vector<std::unique_ptr<Organism>>::iterator Animal::findTarget()
 				return false;
 			if (_b->getId() == this->getId())
 				return true;
-			auto distanceA = (this->getPosition() - _a->getPosition()).length();
-			auto distanceB = (this->getPosition() - _b->getPosition()).length();
-			return distanceA < distanceB;
+			const float distanceA = (this->getPosition() - _a->getPosition()).length();
+			const float distanceB = (this->getPosition() - _b->getPosition()).length();
+			//return distanceA < distanceB;
+			if (distanceA < distanceB)
+			{
+				if (_a->getSpecies() == this->getSpecies())
+				{
+					if (_a->isAbleToMultiply())
+						return true;
+					else return false;
+				}
+				else return true;
+			}
+			else
+			{
+				if (_b->getSpecies() == this->getSpecies())
+				{
+					if (_b->isAbleToMultiply())
+						return false;
+					else return true;
+				}
+				else return false;
+			}
 		};
 	return std::min_element(organisms.begin(), organisms.end(), predicate);
 

@@ -21,8 +21,9 @@ public:
 	void render(const fhl::RenderConf &) const override;
 	void update(float _dt);
 
-	void addOrganism(Organism::Species _species, std::size_t _gener = 0u);
-	void addRandomOrganism(std::size_t _gener = 0u);
+	void addOrganism(Organism::Species _species, std::size_t _gener);
+	void addOrganismInRadius(Organism::Species _species, std::size_t _gener, fhl::Vec2f _pos, float _radius);
+	void addRandomOrganism(std::size_t _gener);
 
 	Container & getOrganisms() { return m_organisms; }
 	const fhl::Vec2u & getSize() const { return m_size; }
