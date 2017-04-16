@@ -18,9 +18,9 @@ void Animal::update(float _dt)
 	auto targetIter = findTarget();
 	if (targetIter == Organism::m_world.getOrganisms().end())
 		return;
-	fhl::Vec2f target = targetIter->get()->getPosition();
-	fhl::Vec2f dir = target - getPosition();
-	fhl::Vec2f direction = dir != fhl::Vec2f::zero() ? dir.normalized() : fhl::Vec2f::zero();
+	const fhl::Vec2f target = targetIter->get()->getPosition();
+	const fhl::Vec2f dir = target - getPosition();
+	const fhl::Vec2f direction = dir != fhl::Vec2f::zero() ? dir.normalized() : fhl::Vec2f::zero();
 
 	move(getVelocity() * _dt * direction);
 }
@@ -38,7 +38,6 @@ std::vector<std::unique_ptr<Organism>>::iterator Animal::findTarget()
 				return true;
 			const float distanceA = (this->getPosition() - _a->getPosition()).length();
 			const float distanceB = (this->getPosition() - _b->getPosition()).length();
-			//return distanceA < distanceB;
 			if (distanceA < distanceB)
 			{
 				if (_a->getSpecies() == this->getSpecies())

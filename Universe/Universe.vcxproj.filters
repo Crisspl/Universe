@@ -207,6 +207,21 @@
     <ClInclude Include="OrganismFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Grass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sowthistle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Guarana.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WolfBerries.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SosnowskiBorsch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\array_fs.glsl">
@@ -371,6 +386,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="OrganismFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Guarana.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SosnowskiBorsch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

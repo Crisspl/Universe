@@ -2,6 +2,8 @@
 
 #include <FHL/Graphics/Renderer.h>
 
+#include "OrganismFactory.h"
+
 std::size_t Organism::s_createdCount = 0u;
 
 Organism::Organism(World & _world, Species _species, fhl::Texture & _tex, unsigned _str, unsigned _initiative, std::size_t _gener) :
@@ -35,6 +37,8 @@ void Organism::contact(Organism & _other)
 {
 	if (getSpecies() == _other.getSpecies())
 		return;
+	if (_other.isPlant())
+		attack(_other);
 	if (m_initiative > _other.m_initiative)
 		attack(_other);
 	else if (m_initiative < _other.m_initiative)
@@ -59,4 +63,9 @@ void Organism::takeAttack(Organism & _other)
 		setDead(true);
 	else
 		_other.setDead(true);
+}
+
+std::unique_ptr<Organism> Organism::multiply() const
+{
+	return OrganismFactory::createOrganism(getSpecies(), m_world, getGeneration() + 1);
 }

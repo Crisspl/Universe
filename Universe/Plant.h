@@ -7,10 +7,13 @@ class Plant :
 	public Organism
 {
 public:
-	Plant(World & _world, Organism::Species _species, fhl::Texture & _tex, unsigned _str, unsigned _initiative, std::size_t _gener);
+	Plant(World & _world, Organism::Species _species, fhl::Texture & _tex, unsigned _str, std::size_t _gener);
 	virtual ~Plant() = default;
 
-	virtual void update(float _dt) override {}
+	void update(float _dt) override;
+	void contact(Organism & _other) override;
+	void takeAttack(Organism & _other) override;
+	std::unique_ptr<Organism> multiply() const override;
 };
 
 #endif

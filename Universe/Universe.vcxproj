@@ -173,14 +173,19 @@
     <ClInclude Include="CyberSheep.h" />
     <ClInclude Include="Fox.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Grass.h" />
+    <ClInclude Include="Guarana.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Organism.h" />
     <ClInclude Include="OrganismFactory.h" />
     <ClInclude Include="Plant.h" />
     <ClInclude Include="Sheep.h" />
+    <ClInclude Include="SosnowskiBorsch.h" />
+    <ClInclude Include="Sowthistle.h" />
     <ClInclude Include="Turtle.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="Wolf.h" />
+    <ClInclude Include="WolfBerries.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
@@ -233,10 +238,12 @@
     <ClCompile Include="CyberSheep.cpp" />
     <ClCompile Include="Fox.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Guarana.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Organism.cpp" />
     <ClCompile Include="OrganismFactory.cpp" />
     <ClCompile Include="Plant.cpp" />
+    <ClCompile Include="SosnowskiBorsch.cpp" />
     <ClCompile Include="Turtle.cpp" />
     <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="World.cpp" />

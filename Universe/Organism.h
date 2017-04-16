@@ -19,7 +19,7 @@ public:
 		Wolf,
 		// plants:
 		Grass,
-		Guarna,
+		Guarana,
 		SosnowskiBorsch,
 		Sowthistle,
 		WolfBerries,
@@ -38,19 +38,26 @@ public:
 	unsigned getInitiative() const { return m_initiative; }
 	std::size_t getId() const { return m_id; }
 	std::size_t getGeneration() const { return m_generation; }
+	virtual float getMultiplyInterval() const { return s_multiplyInterval; }
+
 	bool isDead() const { return m_dead; }
-	bool isAbleToMultiply() const { return m_multiplyTime >= s_multiplyInterval; }
+	bool isAbleToMultiply() const { return m_multiplyTime >= getMultiplyInterval(); }
+	bool isAnimal() const { return m_species <= Species::Wolf; }
+	bool isPlant() const { return m_species >= Species::Grass; }
 
 	virtual void update(float _dt) = 0;
 	bool isCollision(const Organism & _other) const;
 	virtual void contact(Organism & _other);
-	void setDead(bool _d) { m_dead = _d; }
-	void setAbleToMultiply(bool _a) { m_multiplyTime = _a ? m_multiplyTime : 0.f; }
 
-protected:
+	void setDead(bool _d) { m_dead = _d; }
+	void setAbleToMultiply(bool _a) { m_multiplyTime = _a ? getMultiplyInterval() : 0.f; }
+	void setStrength(unsigned _str) { m_strength = _str; }
+
 	void attack(Organism & _other);
 	void addMultiplyTime(float _t) { m_multiplyTime += _t; }
 	virtual void takeAttack(Organism & _other);
+
+	virtual std::unique_ptr<Organism> multiply() const;
 
 protected:
 	World & m_world;

@@ -19,25 +19,33 @@ void World::update(float _dt)
 {
 	removeDeadOrganisms();
 	Container newOnes;
-	for (Container::value_type & o : m_organisms)
+	for (Container::value_type & first : m_organisms)
 	{
-		for (Container::value_type & other : m_organisms)
+		for (Container::value_type & second : m_organisms)
 		{
-			if (o->getId() != other->getId() && o->isCollision(*other))
+			if (first->getId() != second->getId() && first->isCollision(*second))
 			{
-				if (o->getSpecies() == other->getSpecies() && o->isAbleToMultiply() && other->isAbleToMultiply())
+				if (first->isAnimal() && first->getSpecies() == second->getSpecies() && first->isAbleToMultiply() && second->isAbleToMultiply())
 				{
-					newOnes.push_back(OrganismFactory::createOrganism(o->getSpecies(), *this, o->getGeneration() + 1));
-					o->setAbleToMultiply(false);
-					other->setAbleToMultiply(false);
-					newOnes.rbegin()->get()->setPosition(o->getPosition() + fhl::Vec2f(Utilities::randomNonZeroVec2i(-100, 100)).normalized() * 100.f);
-					// TODO refactor
+					newOnes.push_back(first->multiply());
+					first->setAbleToMultiply(false);
+					second->setAbleToMultiply(false);
+					newOnes.rbegin()->get()->setPosition(first->getPosition() + fhl::Vec2f(Utilities::randomNonZeroVec2i(-100, 100)).normalized() * 100.f);
 				}
 				else
-					o->contact(*other);
+					first->contact(*second);
 			}
 		}
-		o->update(_dt);
+		if (first->isPlant() && first->isAbleToMultiply())
+		{
+			if (auto newOne = first->multiply())
+			{
+				newOnes.push_back(std::move(newOne));
+				newOnes.rbegin()->get()->setPosition(first->getPosition() + fhl::Vec2f(Utilities::randomNonZeroVec2i(-100, 100)).normalized() * 100.f);
+			}
+			first->setAbleToMultiply(false);
+		}
+		first->update(_dt);
 	}
 	for(Container::value_type & newOne : newOnes)
 		m_organisms.push_back(std::move(newOne));
@@ -53,21 +61,9 @@ void World::addOrganism(Organism::Species _species, std::size_t _gener)
 	});
 }
 
-void World::addOrganismInRadius(Organism::Species _species, std::size_t _gener, fhl::Vec2f _pos, float _radius)
-{
-	m_organisms.push_back(OrganismFactory::createOrganism(_species, *this, _gener));
-	fhl::Vec2f spawnPosition;
-	do
-	{
-		spawnPosition = fhl::Vec2f(static_cast<float>(Utilities::random<int>(-100, 100)), static_cast<float>(Utilities::random<int>(-100, 100)));
-	} while (spawnPosition != fhl::Vec2f::zero());
-	spawnPosition = spawnPosition.normalized();
-	m_organisms.rbegin()->get()->setPosition(_pos + spawnPosition * _radius);
-}
-
 void World::addRandomOrganism(std::size_t _gener)
 {
-	const unsigned species = Utilities::random<unsigned>(0, static_cast<unsigned>(Organism::Species::Wolf));
+	const unsigned species = Utilities::random<unsigned>(0, static_cast<unsigned>(Organism::Species::Count) - 1);
 	addOrganism(static_cast<Organism::Species>(species), _gener);
 }
 
