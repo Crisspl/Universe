@@ -26,7 +26,7 @@ void Plant::takeAttack(Organism & _other)
 
 std::unique_ptr<Organism> Plant::multiply() const
 {
-	if (Utilities::random<int>(0, 1))
+	if (Utilities::random<unsigned>(0, 99) <= getMultiplyPercentageChance())
 		return Organism::multiply();
 	return nullptr;
 }

@@ -14,6 +14,8 @@ public:
 	void contact(Organism & _other) override;
 	void takeAttack(Organism & _other) override;
 	std::unique_ptr<Organism> multiply() const override;
+
+	virtual unsigned getMultiplyPercentageChance() const { return 50u; }
 };
 
 #endif
