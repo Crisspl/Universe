@@ -19,11 +19,7 @@ Game::Game() :
 	m_world({WIN_X, WIN_Y}),
 	m_running(true)
 {
-	for(int i = 0; i < 50; i++)
-		m_world.addRandomOrganism(0);
-	//m_world.addOrganism(Organism::Species::Sowthistle, 0);
-	//m_world.addOrganism(Organism::Species::Sheep, 0);
-	//m_world.addOrganism(Organism::Species::Sheep, 0);
+	restart();
 }
 
 Game & Game::get()
@@ -79,11 +75,15 @@ void Game::handleEvents()
    SDL_Event event;
 
    while (SDL_PollEvent(&event)) {
-       switch (event.type) {
-           case SDL_QUIT:
-               m_running = false;
-               break;
-       }
+		switch (event.type) {
+			case SDL_QUIT:
+				m_running = false;
+				break;
+			case SDL_KEYDOWN:
+				if (event.key.keysym.sym == SDLK_r)
+					restart();
+				break;
+		}
    }
 }
 
@@ -99,4 +99,11 @@ void Game::draw()
 	fhl::Renderer::render(m_world);
 
    SDL_GL_SwapWindow(m_window);
+}
+
+void Game::restart()
+{
+	m_world.clear();
+	for (int i = 0; i < 50; i++)
+		m_world.addRandomOrganism(0);
 }

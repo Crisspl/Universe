@@ -27,6 +27,8 @@ public:
 	Container & getOrganisms() { return m_organisms; }
 	const fhl::Vec2u & getSize() const { return m_size; }
 
+	void clear() { m_organisms.clear(); }
+
 private:
 	void removeDeadOrganisms();
 
