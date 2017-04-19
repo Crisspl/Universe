@@ -8,10 +8,10 @@ std::size_t Organism::s_createdCount = 0u;
 
 Organism::Organism(World & _world, Species _species, fhl::Texture & _tex, unsigned _str, unsigned _initiative, std::size_t _gener) :
 	m_world(_world),
+	m_sprite(_tex),
 	m_strength(_str),
 	m_initiative(_initiative),
 	m_species(_species),
-	m_sprite(_tex),
 	m_id(s_createdCount++),
 	m_generation(_gener),
 	m_multiplyTime(0.f),

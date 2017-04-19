@@ -24,7 +24,9 @@ public:
 		Sowthistle,
 		WolfBerries,
 
-		Count
+		Count,
+
+		Human
 	};
 
 public:
@@ -34,7 +36,7 @@ public:
 	void render(const fhl::RenderConf &) const override;
 
 	Species getSpecies() const { return m_species; }
-	unsigned getStrength() const { return m_strength; }
+	virtual unsigned getStrength() const { return m_strength; }
 	unsigned getInitiative() const { return m_initiative; }
 	std::size_t getId() const { return m_id; }
 	std::size_t getGeneration() const { return m_generation; }
@@ -61,11 +63,11 @@ public:
 
 protected:
 	World & m_world;
+	fhl::Sprite m_sprite;
 	unsigned m_strength, m_initiative;
 
 private:
 	const Species m_species;
-	fhl::Sprite m_sprite;
 	const std::size_t m_id, m_generation;
 	float m_multiplyTime;
 	bool m_dead;
