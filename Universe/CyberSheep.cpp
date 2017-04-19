@@ -7,9 +7,8 @@ std::vector<std::unique_ptr<Organism>>::iterator CyberSheep::findTarget()
 	using Iter = std::vector<std::unique_ptr<Organism>>::iterator;
 
 	std::vector<Iter> borches;
-	auto & organisms = Organism::m_world.getOrganisms();
 
-	auto i = organisms.begin(), end = organisms.end();
+	auto i = m_world.getSignificantOrganismsRange().first, end = m_world.getSignificantOrganismsRange().second;
 	while (i != end)
 	{
 		i = std::find_if(i, end, [](const std::unique_ptr<Organism> & _o) { return _o->getSpecies() == Organism::Species::SosnowskiBorsch; });

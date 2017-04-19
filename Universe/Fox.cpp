@@ -7,9 +7,8 @@ std::vector<std::unique_ptr<Organism>>::iterator Fox::findTarget()
 	using Iter = std::vector<std::unique_ptr<Organism>>::iterator;
 
 	std::vector<Iter> weakerOnes;
-	auto & organisms = Organism::m_world.getOrganisms();
 
-	auto i = organisms.begin(), end = organisms.end();
+	auto i = m_world.getSignificantOrganismsRange().first, end = m_world.getSignificantOrganismsRange().second;
 	while (i != end)
 	{
 		i = std::find_if(i, end, 
@@ -18,7 +17,7 @@ std::vector<std::unique_ptr<Organism>>::iterator Fox::findTarget()
 			weakerOnes.push_back(i++);
 	}
 	if (weakerOnes.empty())
-		return organisms.end();
+		return m_world.getOrganisms().end();
 
 	return *std::min_element(weakerOnes.begin(), weakerOnes.end(),
 		[this](const Iter & _a, const Iter & _b)

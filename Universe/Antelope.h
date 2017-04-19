@@ -10,7 +10,7 @@ class Antelope :
 {
 public:
 	Antelope(World & _world, std::size_t _gener) :
-		Animal(_world, Organism::Species::Antelope, fhl::ResMgr::loadTexture("antelopeTex", "res/antelope.png"), 4u, 4u, _gener) {}
+		Animal(_world, Organism::Species::Antelope, fhl::ResMgr::loadTexture("antelopeTex", "res/antelope.jpg"), 4u, 4u, _gener) {}
 
 	void takeAttack(Organism & _other) override;
 	float getVelocity() const override { return Animal::getVelocity() * 2.f; }

@@ -15,9 +15,15 @@ void World::render(const fhl::RenderConf &) const
 {
 	for (const Container::value_type & o : m_organisms)
 	{
-		if (m_worldRect.contains(o->getPosition()))
+		if (!o->isDead() && m_worldRect.contains(o->getPosition()))
 			fhl::Renderer::render(*o);
 	}
+}
+
+void World::moveHuman(fhl::Vec2f _dir, float _dt)
+{
+	auto & human = getHuman();
+	human.move(_dir * _dt * human.getVelocity());
 }
 
 void World::update(float _dt)
@@ -73,10 +79,22 @@ void World::addRandomOrganism(std::size_t _gener)
 	addOrganism(static_cast<Organism::Species>(species), _gener);
 }
 
+World::Range World::getSignificantOrganismsRange()
+{
+	return m_organisms.begin()->get()->isDead() ?
+		std::make_pair(std::next(m_organisms.begin()), m_organisms.end()) : std::make_pair(m_organisms.begin(), m_organisms.end());
+}
+
+void World::reset()
+{
+	m_organisms.clear();
+	m_organisms.push_back(OrganismFactory::createOrganism(Organism::Species::Human, *this, 0));
+}
+
 void World::removeDeadOrganisms()
 {
 	m_organisms.erase(
-		std::remove_if(m_organisms.begin(), m_organisms.end(), [](const Container::value_type & _o) {return _o->isDead(); }),
+		std::remove_if(std::next(m_organisms.begin()), m_organisms.end(), [](const Container::value_type & _o) {return _o->isDead(); }),
 		m_organisms.end()
 	);
 }

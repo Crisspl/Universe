@@ -11,6 +11,7 @@
 #include "SosnowskiBorsch.h"
 #include "Sowthistle.h"
 #include "WolfBerries.h"
+#include "Human.h"
 
 std::map<Organism::Species, OrganismFactory::Func_t> OrganismFactory::m_functions{
 	std::make_pair(Organism::Species::Antelope, &OrganismFactory::createOrganism<Antelope>),
@@ -23,6 +24,7 @@ std::map<Organism::Species, OrganismFactory::Func_t> OrganismFactory::m_function
 	std::make_pair(Organism::Species::Guarana, &OrganismFactory::createOrganism<Guarana>),
 	std::make_pair(Organism::Species::SosnowskiBorsch, &OrganismFactory::createOrganism<SosnowskiBorsch>),
 	std::make_pair(Organism::Species::Sowthistle, &OrganismFactory::createOrganism<Sowthistle>),
-	std::make_pair(Organism::Species::WolfBerries, &OrganismFactory::createOrganism<WolfBerries>)
+	std::make_pair(Organism::Species::WolfBerries, &OrganismFactory::createOrganism<WolfBerries>),
+	std::make_pair(Organism::Species::Human, &OrganismFactory::createOrganism<Human>)
 };
 

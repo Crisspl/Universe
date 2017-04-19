@@ -21,7 +21,7 @@ void Human::activateExtraStrength()
 	if (m_extraStr.cooldownLeft <= 0.f)
 	{
 		m_extraStr.value = ExtraStrength::maxVal;
-		m_sprite.setColor(s_extraStrActiveColor);
+		m_sprite.setColor(s_extraStrActivatedColor);
 	}
 }
 

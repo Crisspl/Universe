@@ -10,7 +10,7 @@ class WolfBerries :
 {
 public:
 	WolfBerries(World & _w, std::size_t _gener) :
-		Plant(_w, Organism::Species::WolfBerries, fhl::ResMgr::loadTexture("wolfBerriesTex", "res/wolfBerries.png"), 99u, _gener) {}
+		Plant(_w, Organism::Species::WolfBerries, fhl::ResMgr::loadTexture("wolfBerriesTex", "res/wolfBerries.jpg"), 99u, _gener) {}
 };
 
 #endif

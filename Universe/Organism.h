@@ -44,8 +44,8 @@ public:
 
 	bool isDead() const { return m_dead; }
 	bool isAbleToMultiply() const { return m_multiplyTime >= getMultiplyInterval(); }
-	bool isAnimal() const { return m_species <= Species::Wolf; }
-	bool isPlant() const { return m_species >= Species::Grass; }
+	bool isAnimal() const { return m_species <= Species::Wolf || m_species == Species::Human; }
+	bool isPlant() const { return m_species >= Species::Grass && m_species < Species::Count; }
 
 	virtual void update(float _dt) = 0;
 	bool isCollision(const Organism & _other) const;

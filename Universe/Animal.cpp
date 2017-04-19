@@ -59,6 +59,7 @@ std::vector<std::unique_ptr<Organism>>::iterator Animal::findTarget()
 				else return false;
 			}
 		};
-	return std::min_element(organisms.begin(), organisms.end(), predicate);
+	auto range = m_world.getSignificantOrganismsRange();
+	return std::min_element(range.first, range.second, predicate);
 
 }

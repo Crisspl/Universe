@@ -12,7 +12,7 @@
 #include "Wolf.h"
 #include "Sheep.h"
 
-SDL_Window* Game::m_window;
+SDL_Window * Game::m_window;
 SDL_GLContext Game::m_context;
 
 Game::Game() :
@@ -72,17 +72,37 @@ void Game::mainLoop()
 
 void Game::handleEvents()
 {
-   SDL_Event event;
+	static std::map<unsigned, fhl::Vec2f> dirs
+	{
+		std::make_pair(SDLK_UP, fhl::Vec2f::down()),
+		std::make_pair(SDLK_DOWN, fhl::Vec2f::up()),
+		std::make_pair(SDLK_LEFT, fhl::Vec2f::left()),
+		std::make_pair(SDLK_RIGHT, fhl::Vec2f::right())
+	};
 
-   while (SDL_PollEvent(&event)) {
+   SDL_Event event;
+	const Uint8 * kbstate = SDL_GetKeyboardState(NULL);
+	if (kbstate[SDL_SCANCODE_UP])
+		m_world.moveHuman(fhl::Vec2f::down(), dt);
+	if (kbstate[SDL_SCANCODE_DOWN])
+		m_world.moveHuman(fhl::Vec2f::up(), dt);
+	if (kbstate[SDL_SCANCODE_LEFT])
+		m_world.moveHuman(fhl::Vec2f::left(), dt);
+	if (kbstate[SDL_SCANCODE_RIGHT])
+		m_world.moveHuman(fhl::Vec2f::right(), dt);
+
+   while (SDL_PollEvent(&event)) { 
 		switch (event.type) {
-			case SDL_QUIT:
-				m_running = false;
-				break;
-			case SDL_KEYDOWN:
-				if (event.key.keysym.sym == SDLK_r)
-					restart();
-				break;
+		case SDL_QUIT:
+			m_running = false;
+			break;
+		case SDL_KEYDOWN:
+			switch (event.key.keysym.sym)
+			{
+				case SDLK_r: restart(); break;
+				case SDLK_p: m_world.activateHumanSuperpower(); break;
+			}
+			break;
 		}
    }
 }
@@ -103,7 +123,7 @@ void Game::draw()
 
 void Game::restart()
 {
-	m_world.clear();
+	m_world.reset();
 	for (int i = 0; i < 50; i++)
 		m_world.addRandomOrganism(0);
 }

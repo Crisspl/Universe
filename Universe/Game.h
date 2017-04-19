@@ -30,7 +30,7 @@ private:
 	void restart();
 
 private:
-   static SDL_Window* m_window;
+   static SDL_Window * m_window;
    static SDL_GLContext m_context;
 
 	World m_world;

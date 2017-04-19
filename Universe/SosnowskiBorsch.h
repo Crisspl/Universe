@@ -10,7 +10,7 @@ class SosnowskiBorsch : // no idea whether i should translate "barszcz sosnowski
 {
 public:
 	SosnowskiBorsch(World & _w, std::size_t _gener) :
-		Plant(_w, Organism::Species::SosnowskiBorsch, fhl::ResMgr::loadTexture("sosnowskiBorchTex", "res/sosnowskiBorch.png"), 10u, _gener) {}
+		Plant(_w, Organism::Species::SosnowskiBorsch, fhl::ResMgr::loadTexture("sosnowskiBorchTex", "res/sosnowskiBorch.jpg"), 10u, _gener) {}
 	void takeAttack(Organism & _other) override;
 };
 
