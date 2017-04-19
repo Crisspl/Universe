@@ -35,6 +35,7 @@ private:
 private:
 	Container m_organisms;
 	fhl::Vec2u m_size;
+	fhl::Rect m_worldRect;
 };
 
 #endif

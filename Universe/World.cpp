@@ -5,14 +5,19 @@
 
 #include "OrganismFactory.h"
 
-World::World(fhl::Vec2u _size) : m_size(_size)
+World::World(fhl::Vec2u _size) :
+	m_size(_size),
+	m_worldRect(fhl::Vec2f::zero() - fhl::Vec2f::one() * 50.f, fhl::Vec2f(m_size) + fhl::Vec2f::one() * 50.f)
 {
 }
 
 void World::render(const fhl::RenderConf &) const
 {
 	for (const Container::value_type & o : m_organisms)
-		fhl::Renderer::render(*o);
+	{
+		if (m_worldRect.contains(o->getPosition()))
+			fhl::Renderer::render(*o);
+	}
 }
 
 void World::update(float _dt)
@@ -47,6 +52,7 @@ void World::update(float _dt)
 		}
 		first->update(_dt);
 	}
+	m_organisms.reserve(m_organisms.size() + newOnes.size());
 	for(Container::value_type & newOne : newOnes)
 		m_organisms.push_back(std::move(newOne));
 	std::cout << m_organisms.size() << '\n';
