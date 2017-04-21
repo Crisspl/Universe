@@ -22,7 +22,6 @@ public:
 
 	void render(const fhl::RenderConf &) const override;
 	void moveHuman(fhl::Vec2f _dir, float _dt);
-	void activateHumanSuperpower() { getHuman().activateExtraStrength(); }
 	void update(float _dt);
 
 	void addOrganism(Organism::Species _species, std::size_t _gener);
@@ -33,10 +32,10 @@ public:
 	const fhl::Vec2u & getSize() const { return m_size; }
 
 	void reset();
+	Human & getHuman() { return reinterpret_cast<Human &>(**m_organisms.begin()); }
 
 private:
 	void removeDeadOrganisms();
-	Human & getHuman() { return reinterpret_cast<Human &>(**m_organisms.begin()); }
 
 private:
 	Container m_organisms;

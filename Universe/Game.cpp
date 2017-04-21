@@ -100,7 +100,8 @@ void Game::handleEvents()
 			switch (event.key.keysym.sym)
 			{
 				case SDLK_r: restart(); break;
-				case SDLK_p: m_world.activateHumanSuperpower(); break;
+				case SDLK_p: m_world.getHuman().activateExtraStrength(); break;
+				case SDLK_q: m_world.getHuman().setDead(true); break;
 			}
 			break;
 		}
