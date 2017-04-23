@@ -11,15 +11,22 @@
 #include "Fox.h"
 #include "Wolf.h"
 #include "Sheep.h"
+#include "srcSolarSystem/EllipseTour.h"
 
 SDL_Window * Game::m_window;
 SDL_GLContext Game::m_context;
 
 Game::Game() :
 	m_world({WIN_X, WIN_Y}),
+	m_sun(fhl::ResMgr::loadModelData("earth", "res/earth/earth.obj")),
 	m_running(true)
 {
 	restart();
+	m_sun.setPosition(fhl::Vec3f(WIN_X / 2, WIN_Y / 2, -200.f));
+
+	auto earth = std::make_unique<Orbitable>(*fhl::ResMgr::getModelData("earth"), std::make_unique<EllipseTour>(400.f, 250.f));
+	earth->setScale(m_sun.getScale() * 0.7f);
+	m_sun.addSatellite("earth", std::move(earth));
 }
 
 Game & Game::get()
@@ -111,12 +118,17 @@ void Game::handleEvents()
 void Game::update()
 {
 	m_world.update(dt);
+	m_sun.update(dt);
+	std::cout << m_sun.getSatellite("earth").getLights().size() << '\n';
 }
 
 void Game::draw()
 {
 	fhl::Renderer::clearColor();
 
+	fhl::Configurator::setEnableDepthTest(true);
+	fhl::Renderer::render(m_sun);
+	fhl::Configurator::setEnableDepthTest(false);
 	fhl::Renderer::render(m_world);
 
    SDL_GL_SwapWindow(m_window);

@@ -10,6 +10,7 @@
 #include <FHL/Graphics/ColoredRect.h>
 
 #include "World.h"
+#include "srcSolarSystem/Sun.h"
 
 class Game
 {
@@ -34,6 +35,7 @@ private:
    static SDL_GLContext m_context;
 
 	World m_world;
+	Sun m_sun;
 
    fhl::Clock m_timer;
    float dt;

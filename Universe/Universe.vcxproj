@@ -183,6 +183,10 @@
     <ClInclude Include="Sheep.h" />
     <ClInclude Include="SosnowskiBorsch.h" />
     <ClInclude Include="Sowthistle.h" />
+    <ClInclude Include="srcSolarSystem\EllipseTour.h" />
+    <ClInclude Include="srcSolarSystem\Orbitable.h" />
+    <ClInclude Include="srcSolarSystem\OrbitTour.h" />
+    <ClInclude Include="srcSolarSystem\Sun.h" />
     <ClInclude Include="Turtle.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="Wolf.h" />
@@ -246,6 +250,8 @@
     <ClCompile Include="OrganismFactory.cpp" />
     <ClCompile Include="Plant.cpp" />
     <ClCompile Include="SosnowskiBorsch.cpp" />
+    <ClCompile Include="srcSolarSystem\Orbitable.cpp" />
+    <ClCompile Include="srcSolarSystem\Sun.cpp" />
     <ClCompile Include="Turtle.cpp" />
     <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="World.cpp" />

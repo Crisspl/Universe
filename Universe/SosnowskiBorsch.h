@@ -5,7 +5,7 @@
 
 #include <FHL/Graphics/ResMgr.h>
 
-class SosnowskiBorsch : // no idea whether i should translate "barszcz sosnowski" :D
+class SosnowskiBorsch : // no idea whether i should translate "barskzcz sosnowski" :D
 	public Plant
 {
 public:

@@ -40,6 +40,12 @@
     <Filter Include="Source Files\FHL\Maths">
       <UniqueIdentifier>{145b0b0e-a7e1-420a-973e-a63175664764}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SolarSystem">
+      <UniqueIdentifier>{4124cf91-dac4-4c67-9bc0-89d075ef7707}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SolarSystem">
+      <UniqueIdentifier>{61aea078-5e8a-4be8-af1d-d77a7c395e2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Buffer.h">
@@ -225,6 +231,18 @@
     <ClInclude Include="Human.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="srcSolarSystem\Orbitable.h">
+      <Filter>Header Files\SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="srcSolarSystem\OrbitTour.h">
+      <Filter>Header Files\SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="srcSolarSystem\EllipseTour.h">
+      <Filter>Header Files\SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="srcSolarSystem\Sun.h">
+      <Filter>Header Files\SolarSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\array_fs.glsl">
@@ -399,6 +417,12 @@
     </ClCompile>
     <ClCompile Include="Human.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="srcSolarSystem\Orbitable.cpp">
+      <Filter>Source Files\SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="srcSolarSystem\Sun.cpp">
+      <Filter>Source Files\SolarSystem</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
