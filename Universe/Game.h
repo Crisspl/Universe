@@ -1,7 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <GL/glew.h>
 #include <SDL.h>
 #include <vector>
 #include <memory>
@@ -10,6 +9,7 @@
 #include <FHL/Graphics/ColoredRect.h>
 
 #include "World.h"
+#include "Camera.h"
 #include "srcSolarSystem/Sun.h"
 
 class Game
@@ -27,6 +27,8 @@ private:
    void handleEvents();
    void update();
    void draw();
+	
+	void calcCameraRotation();
 
 	void restart();
 
@@ -36,11 +38,13 @@ private:
 
 	World m_world;
 	Sun m_sun;
+	Camera m_cam;
 
    fhl::Clock m_timer;
-   float dt;
+   float m_dt;
 
    bool m_running;
+	bool m_handleWorld;
 
 public:
    constexpr static std::size_t WIN_X = 800, WIN_Y = 600;

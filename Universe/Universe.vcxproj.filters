@@ -243,6 +243,9 @@
     <ClInclude Include="srcSolarSystem\Sun.h">
       <Filter>Header Files\SolarSystem</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Libs\FHL\FHL\Graphics\Shaders\array_fs.glsl">
@@ -423,6 +426,9 @@
     </ClCompile>
     <ClCompile Include="srcSolarSystem\Sun.cpp">
       <Filter>Source Files\SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
