@@ -41,4 +41,8 @@ then it'll be chosen only if it's "able to multiply" (prolific?). However there 
 **Q** - make Human commit suicide (in case you just want to watch the simulation :D)  
 **P** - activate Human superpower (+10 strength and decreasing every second, then 5s cooldown)  
 **R** - restart simulation  
-**X** - hide (and pause) simulation
+**X** - hide (and pause) simulation  
+  
+---
+  
+![](/img/img.png?raw=true)
